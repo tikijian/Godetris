@@ -1,0 +1,58 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://cut5nhl620gsv"]
+
+[ext_resource type="Texture2D" uid="uid://djspg334u82sv" path="res://Tiles/Blocks.png" id="1_sgqir"]
+[ext_resource type="Texture2D" uid="uid://70avxuvlqnj2" path="res://Tiles/Tiles.png" id="2_fcoy7"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jim1a"]
+texture = ExtResource("2_fcoy7")
+texture_region_size = Vector2i(96, 96)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -48, 48, -48, 48, 48, -48, 48)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -48, 48, -48, 48, 48, -48, 48)
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -48, 48, -48, 48, 48, -48, 48)
+3:0/0 = 0
+3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -48, 48, -48, 48, 48, -48, 48)
+4:0/0 = 0
+4:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+4:0/0/physics_layer_0/angular_velocity = 0.0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-48, -48, 48, -48, 48, 48, -48, 48)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uil5t"]
+texture = ExtResource("1_sgqir")
+0:0/size_in_atlas = Vector2i(6, 6)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+6:0/size_in_atlas = Vector2i(6, 6)
+6:0/0 = 0
+6:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+6:0/0/physics_layer_0/angular_velocity = 0.0
+12:0/size_in_atlas = Vector2i(6, 6)
+12:0/0 = 0
+12:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+12:0/0/physics_layer_0/angular_velocity = 0.0
+18:0/size_in_atlas = Vector2i(6, 6)
+18:0/0 = 0
+18:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+18:0/0/physics_layer_0/angular_velocity = 0.0
+24:0/size_in_atlas = Vector2i(6, 6)
+24:0/0 = 0
+24:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+24:0/0/physics_layer_0/angular_velocity = 0.0
+
+[resource]
+tile_size = Vector2i(96, 96)
+physics_layer_0/collision_layer = 1
+sources/14 = SubResource("TileSetAtlasSource_uil5t")
+sources/0 = SubResource("TileSetAtlasSource_jim1a")
+tile_proxies/coords_level = [[3, Vector2i(0, 0)], [8, Vector2i(0, 0)], [4, Vector2i(0, 0)], [8, Vector2i(6, 0)], [5, Vector2i(0, 0)], [8, Vector2i(12, 0)], [6, Vector2i(0, 0)], [8, Vector2i(18, 0)], [7, Vector2i(0, 0)], [8, Vector2i(24, 0)], [9, Vector2i(0, 0)], [14, Vector2i(0, 0)], [10, Vector2i(0, 0)], [14, Vector2i(6, 0)], [11, Vector2i(0, 0)], [14, Vector2i(12, 0)], [12, Vector2i(0, 0)], [14, Vector2i(18, 0)], [13, Vector2i(0, 0)], [14, Vector2i(24, 0)]]
