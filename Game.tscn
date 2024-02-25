@@ -1,9 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://b3wgulnvowy0t"]
+[gd_scene load_steps=10 format=3 uid="uid://b3wgulnvowy0t"]
 
+[ext_resource type="Script" path="res://Scripts/Game.gd" id="1_1clkl"]
 [ext_resource type="PackedScene" uid="uid://dewn8ku4qmowk" path="res://Field.tscn" id="1_kpct1"]
+[ext_resource type="PackedScene" uid="uid://c5jp8mbtwolmv" path="res://Blocks/T_Block.tscn" id="3_eubob"]
+[ext_resource type="PackedScene" uid="uid://dbvul76r5wurg" path="res://Blocks/O_Block.tscn" id="4_rx541"]
+[ext_resource type="PackedScene" uid="uid://dit7fxcf0h26s" path="res://Blocks/I_Block.tscn" id="5_bdrlg"]
+[ext_resource type="PackedScene" uid="uid://b1ls3b2t41abc" path="res://Blocks/S_Block.tscn" id="6_tsrms"]
+[ext_resource type="PackedScene" uid="uid://bg80sb480ftct" path="res://Blocks/Z_Block.tscn" id="7_722gu"]
+[ext_resource type="PackedScene" uid="uid://ce02eajs1hmt8" path="res://Blocks/L_Block.tscn" id="8_x5laf"]
+[ext_resource type="PackedScene" uid="uid://itoinevuc1iq" path="res://Blocks/R_Block.tscn" id="9_hvoae"]
 
-[node name="Node2D" type="Node"]
+[node name="Game" type="Node"]
+script = ExtResource("1_1clkl")
 
 [node name="Field" parent="." instance=ExtResource("1_kpct1")]
-position = Vector2(328, 488)
-scale = Vector2(0.5, 0.5)
+position = Vector2(144, 144)
+
+[node name="TBlock" parent="." instance=ExtResource("3_eubob")]
+position = Vector2(216, 192)
+
+[node name="OBlock" parent="." instance=ExtResource("4_rx541")]
+position = Vector2(432, 360)
+
+[node name="I_Block" parent="." instance=ExtResource("5_bdrlg")]
+position = Vector2(360, 528)
+
+[node name="S_Block" parent="." instance=ExtResource("6_tsrms")]
+position = Vector2(216, 672)
+
+[node name="Z_Block" parent="." instance=ExtResource("7_722gu")]
+position = Vector2(456, 672)
+
+[node name="L_Block" parent="." instance=ExtResource("8_x5laf")]
+position = Vector2(216, 480)
+
+[node name="R_Block" parent="." instance=ExtResource("9_hvoae")]
+position = Vector2(264, 336)

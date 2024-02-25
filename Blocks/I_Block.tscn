@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://dit7fxcf0h26s"]
+
+[ext_resource type="PackedScene" uid="uid://daaye3wo7hybk" path="res://Blocks/Chunk.tscn" id="1_wn1oa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ifhnd"]
+size = Vector2(48, 192)
+
+[node name="I_Block" type="Area2D"]
+input_pickable = false
+
+[node name="Chunk" parent="." instance=ExtResource("1_wn1oa")]
+position = Vector2(0, -72)
+
+[node name="Chunk2" parent="." instance=ExtResource("1_wn1oa")]
+position = Vector2(0, -24)
+
+[node name="Chunk3" parent="." instance=ExtResource("1_wn1oa")]
+position = Vector2(0, 72)
+
+[node name="Chunk4" parent="." instance=ExtResource("1_wn1oa")]
+position = Vector2(0, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_ifhnd")

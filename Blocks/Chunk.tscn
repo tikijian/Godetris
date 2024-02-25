@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://daaye3wo7hybk"]
+
+[ext_resource type="Texture2D" uid="uid://btn0oysp7g0og" path="res://Tiles/Blocks.png" id="1_073pw"]
+[ext_resource type="Script" path="res://Scripts/Chunk.gd" id="2_w4x3i"]
+
+[node name="Chunk" type="Sprite2D"]
+texture_filter = 2
+texture = ExtResource("1_073pw")
+region_enabled = true
+region_rect = Rect2(0, 0, 48, 48)
+script = ExtResource("2_w4x3i")
