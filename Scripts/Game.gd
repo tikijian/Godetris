@@ -1,19 +1,15 @@
 extends Node
 
 var FieldZone = preload("res://FieldZone.tscn")
+@onready var field: TileMap = $Field
 
 func _init():
-	var figure = Figure.new()
+	pass
 	
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	var container: Node2D = $Container
-	var field: TileMap = $Field
-
-	var zone = FieldZone.instantiate()
-	zone.position = field.map_to_local(Vector2i(1, 1))
-	field.add_child(zone)
+	create_block()
 	
 	#for col in range(12):
 		#for row in range(8):
@@ -26,3 +22,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func create_block():
+	var block = BlockFabric.create()
+	block.position = field.map_to_local(Vector2i(3, -3))
+	field.add_child(block)
