@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://btn0oysp7g0og" path="res://Tiles/Blocks.png" id="1_sgqir"]
 [ext_resource type="Texture2D" uid="uid://ygxjc0sk4ki3" path="res://Tiles/Tiles.png" id="2_fcoy7"]
 [ext_resource type="Texture2D" uid="uid://b8dx6v0607xls" path="res://Tiles/obj_crate003.png" id="2_m6ncy"]
-[ext_resource type="PackedScene" uid="uid://ctopfg7nrn2bi" path="res://FieldZone.tscn" id="2_r0hiq"]
 [ext_resource type="Texture2D" uid="uid://dwv081qapukqu" path="res://Tiles/obj_crate004.png" id="3_d53sc"]
 [ext_resource type="Texture2D" uid="uid://httlroueimim" path="res://Tiles/obj_crate005.png" id="4_5irxi"]
 [ext_resource type="Texture2D" uid="uid://dkak7t3bwb010" path="res://Tiles/obj_crate001.png" id="4_hq2hl"]
@@ -12,9 +11,22 @@
 [sub_resource type="TileMapPattern" id="TileMapPattern_fiwb7"]
 tile_data = PackedInt32Array(0, 65536, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 262144, 0, 327680, 0, 0, 393216, 0, 0, 458752, 0, 0, 524288, 196608, 0, 589824, 262144, 0, 655360, 0, 0, 720896, 0, 0, 786432, 65536, 0, 786433, 131072, 0, 786434, 131072, 0, 786435, 131072, 0, 786436, 131072, 0, 786437, 131072, 0, 786438, 131072, 0, 786439, 196608, 0, 786440, 131072, 0, 9, 65536, 0, 65545, 196608, 0, 131081, 0, 0, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 393225, 0, 0, 458761, 131072, 0, 524297, 0, 0, 589833, 0, 0, 655369, 262144, 0, 720905, 0, 0, 786441, 65536, 0)
 
+[sub_resource type="PackedScene" id="PackedScene_j8axp"]
+_bundled = {
+"conn_count": 0,
+"conns": PackedInt32Array(),
+"editable_instances": [],
+"names": PackedStringArray("FieldZone", "Sprite2D", "texture_filter", "texture", "region_enabled", "region_rect"),
+"node_count": 1,
+"node_paths": [],
+"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 4, 2, 0, 3, 1, 4, 2, 5, 3, 0),
+"variants": [2, ExtResource("2_fcoy7"), true, Rect2(0, 0, 48, 48)],
+"version": 3
+}
+
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lmno7"]
 resource_name = "Ololo"
-scenes/1/scene = ExtResource("2_r0hiq")
+scenes/1/scene = SubResource("PackedScene_j8axp")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uw4tf"]
 texture = ExtResource("2_m6ncy")

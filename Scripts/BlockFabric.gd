@@ -9,8 +9,7 @@ enum BlockType {O = 1, T, L, R, Z, S}
 #var Z_Block = preload("res://Blocks/Z_Block.tscn")
 #var S_Block = preload("res://Blocks/S_Block.tscn")
 
-# TODO: typed return
-static func create():
+static func create() -> Block:
 	match(randi_range(1, BlockType.size()) as BlockType):
 		BlockType.O:
 			return preload("res://Blocks/O_Block.tscn").instantiate()
@@ -22,5 +21,6 @@ static func create():
 			return preload("res://Blocks/R_Block.tscn").instantiate()
 		BlockType.Z:
 			return preload("res://Blocks/Z_Block.tscn").instantiate()
-		BlockType.S:
+		BlockType.S, _:
 			return preload("res://Blocks/S_Block.tscn").instantiate()
+

@@ -1,6 +1,5 @@
 extends Node
 
-var FieldZone = preload("res://FieldZone.tscn")
 @onready var field: TileMap = $Field
 
 func _init():
@@ -18,12 +17,13 @@ func _ready():
 			#container.add_child(zone)
 		
 
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	pass
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
+
 
 func create_block():
-	var block = BlockFabric.create()
+	var block := BlockFabric.create()
 	block.position = field.map_to_local(Vector2i(3, -3))
 	field.add_child(block)
