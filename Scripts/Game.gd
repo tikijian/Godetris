@@ -27,19 +27,32 @@ func _process(delta):
 		get_tree().quit()
 		
 	if Input.is_action_just_pressed("left"):
-		move(Vector2.LEFT)
+		current_block.move(Vector2.LEFT, field)
 	if Input.is_action_just_pressed("right"):
-		move(Vector2.RIGHT)
+		current_block.move(Vector2.RIGHT, field)
 	if Input.is_action_just_pressed("down"):
-		move(Vector2.DOWN)
+		current_block.move(Vector2.DOWN, field)
+	if Input.is_action_just_pressed("up"):
+		current_block.move(Vector2.UP, field)
+	if Input.is_action_just_pressed("rotate"):
+		current_block.flip()
 		
 
-func move(direction: Vector2):
-	var new_pos := current_block.position + direction * BLOCK_SIZE
-	var chunks_coords = current_block.get_chunks_postions().map()
-	if not field.has_any_blocks(chunks_coords):
-		current_block.position += direction * BLOCK_SIZE
 
+func move(direction: Vector2):
+	var position_shift = direction * BLOCK_SIZE
+	var new_chunks_coords: Array[Vector2]
+	new_chunks_coords.assign(
+		current_block.get_chunks_postions().map(
+			func(coord): return coord + position_shift
+		)
+	)
+	
+	if field.has_any_blocks(new_chunks_coords):
+		return
+
+	current_block.position += position_shift
+ 
 func create_block():
 	current_block = BlockFabric.create()
 	current_block.position = field.map_to_local(Vector2i(3, -3)) + Vector2(HALF_BLOCK, HALF_BLOCK)

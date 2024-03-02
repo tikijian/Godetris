@@ -11,16 +11,20 @@ input_pickable = false
 script = ExtResource("1_i4wks")
 
 [node name="Chunk" parent="." instance=ExtResource("1_wn1oa")]
-position = Vector2(0, -72)
+position = Vector2(24, -72)
 
 [node name="Chunk2" parent="." instance=ExtResource("1_wn1oa")]
-position = Vector2(0, -24)
+position = Vector2(24, -24)
 
 [node name="Chunk3" parent="." instance=ExtResource("1_wn1oa")]
-position = Vector2(0, 72)
+position = Vector2(24, 72)
 
 [node name="Chunk4" parent="." instance=ExtResource("1_wn1oa")]
-position = Vector2(0, 24)
+position = Vector2(24, 24)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(24, 0)
 shape = SubResource("RectangleShape2D_ifhnd")
+
+[node name="RotationPoint" type="Marker2D" parent="."]
+position = Vector2(24, 0)
