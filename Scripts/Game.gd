@@ -1,6 +1,7 @@
 extends Node
 
 const BLOCK_SIZE = 48
+const HALF_BLOCK = BLOCK_SIZE / 2
 
 @onready var field: Field = $Field
 var current_block: Block
@@ -26,20 +27,20 @@ func _process(delta):
 		get_tree().quit()
 		
 	if Input.is_action_just_pressed("left"):
-		current_block.position.x -= 48
-
-
+		move(Vector2.LEFT)
 	if Input.is_action_just_pressed("right"):
-		current_block.position.x += 48
+		move(Vector2.RIGHT)
 	if Input.is_action_just_pressed("down"):
-		current_block.position.y += 48
-	if Input.is_anything_pressed():
-		var chunks_coords = current_block.get_chunks_postions()
-		print("has blocks? ", field.has_any_blocks(chunks_coords))
+		move(Vector2.DOWN)
+		
 
-
+func move(direction: Vector2):
+	var new_pos := current_block.position + direction * BLOCK_SIZE
+	var chunks_coords = current_block.get_chunks_postions().map()
+	if not field.has_any_blocks(chunks_coords):
+		current_block.position += direction * BLOCK_SIZE
 
 func create_block():
 	current_block = BlockFabric.create()
-	current_block.position = field.map_to_local(Vector2i(0, 0)) + Vector2(BLOCK_SIZE / 2, 0)
+	current_block.position = field.map_to_local(Vector2i(3, -3)) + Vector2(HALF_BLOCK, HALF_BLOCK)
 	field.add_child(current_block)

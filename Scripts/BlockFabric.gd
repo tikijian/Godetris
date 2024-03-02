@@ -1,6 +1,6 @@
 class_name BlockFabric
 
-enum BlockType {O = 1, T, L, R, Z, S}
+enum BlockType {O = 1, T, I, L, R, Z, S}
 
 #var O_Block = preload("res://Blocks/O_Block.tscn")
 #var T_Block = preload("res://Blocks/T_Block.tscn")
@@ -15,6 +15,8 @@ static func create() -> Block:
 			return preload("res://Blocks/O_Block.tscn").instantiate()
 		BlockType.T:
 			return preload("res://Blocks/T_Block.tscn").instantiate()
+		BlockType.I:
+			return preload("res://Blocks/I_Block.tscn").instantiate()
 		BlockType.L:
 			return preload("res://Blocks/L_Block.tscn").instantiate()
 		BlockType.R:

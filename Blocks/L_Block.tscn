@@ -7,18 +7,19 @@
 script = ExtResource("1_ugf1d")
 
 [node name="Chunk" parent="." instance=ExtResource("1_3l025")]
-position = Vector2(0, 24)
+position = Vector2(24, 24)
 
 [node name="Chunk2" parent="." instance=ExtResource("1_3l025")]
-position = Vector2(-48, 24)
+position = Vector2(-24, 24)
 
 [node name="Chunk3" parent="." instance=ExtResource("1_3l025")]
-position = Vector2(48, 24)
+position = Vector2(72, 24)
 
 [node name="Chunk4" parent="." instance=ExtResource("1_3l025")]
-position = Vector2(-48, -24)
+position = Vector2(-24, -24)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-position = Vector2(-24, 0)
-rotation = -0.00222821
 polygon = PackedVector2Array(-48, 0, -48, 48, 96, 48, 96, 0, 48, 0, 0, 0, 0, -48, -48, -48)
+
+[node name="RotationPoint" type="Marker2D" parent="."]
+position = Vector2(24, 0)
