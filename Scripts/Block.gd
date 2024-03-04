@@ -34,7 +34,7 @@ func move(direction: Vector2, field: Field):
 	position += position_shift
 
 func flip():
-	var prev_origin = transform.origin
-
-	transform = transform.rotated_local(deg_to_rad(90)).translated_local(transform.origin)
-	#.rotated_local(deg_to_rad(90))
+	if name == "O_Block":
+		return
+		
+	rotate(PI/2)
