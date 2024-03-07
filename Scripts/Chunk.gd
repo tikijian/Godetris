@@ -5,5 +5,8 @@ extends Sprite2D
 const SPRITE_SIZE = 48
 const REGION_COUNT = 4
 
+var tile_index = 0
+
 func _init():
-	region_rect.position.x = SPRITE_SIZE * randi_range(0, REGION_COUNT)
+	tile_index = randi_range(0, REGION_COUNT)
+	region_rect.position.x = SPRITE_SIZE * tile_index

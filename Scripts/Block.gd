@@ -9,7 +9,6 @@ var chunks: Array[Node]
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	chunks = find_children('Chunk*', 'Chunk')
-	print(rotation_point)
 	
 func _process(delta):
 	pass
@@ -19,7 +18,7 @@ func get_chunks_postions() -> Array[Vector2]:
 	result.assign(chunks.map(func(chunk): return to_global(chunk.position)))
 	return result
 	
-func move(direction: Vector2, field: Field):
+func move(direction: Vector2, field: Field) -> bool:
 	var position_shift = direction * STEP
 	var new_chunks_coords: Array[Vector2]
 	new_chunks_coords.assign(
@@ -29,9 +28,12 @@ func move(direction: Vector2, field: Field):
 	)
 	
 	if field.has_any_blocks(new_chunks_coords):
-		return
+		# unable to move further, so return.
+		var is_bottom_reached = direction == Vector2.DOWN
+		return is_bottom_reached
 
 	position += position_shift
+	return false
 
 func flip():
 	if name == "O_Block":

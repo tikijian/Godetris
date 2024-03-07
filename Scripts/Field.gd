@@ -9,3 +9,11 @@ func has_any_blocks(coords: Array[Vector2]) -> bool:
 			return true
 	
 	return false
+
+func commit_block(block: Block):
+	var global_transform = get_global_transform()
+	for chunk: Chunk in block.chunks:
+		var coords = (global_transform * block.transform * chunk.transform).origin
+		var pos = local_to_map(to_local(coords))
+		# TODO: respect rotation
+		set_cell(0, pos, 19, Vector2i(chunk.tile_index, 0))
