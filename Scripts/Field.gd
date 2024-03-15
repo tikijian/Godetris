@@ -41,14 +41,14 @@ func move_chunks(x: int, y: int):
 		return
 
 	var current_coord = Vector2i(x, y)
-	if get_cell_tile_data(0, current_coord) == null:
-		return move_chunks(x, y - 1)
-	
-	set_cell(0, current_coord)
+	#if get_cell_tile_data(0, current_coord) == null:
+		#return move_chunks(x, y - 1)
 	
 	var next_coord = Vector2i(current_coord.x, current_coord.y - 1)
 	var next_tile = get_cell_tile_data(0, next_coord)
-	if next_tile != null:
+	if next_tile == null:
+		set_cell(0, current_coord)
+	else:
 		set_cell(0, current_coord, 19, get_cell_atlas_coords(0, next_coord))
 
 	move_chunks(next_coord.x, next_coord.y)
